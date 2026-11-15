@@ -4,11 +4,13 @@ Memo-Rex is an AI-Powered Github Action to generate and update project documenta
 
 ## Requirements:
 
-- Node.js 24
+- Node.js version specified in [`.node-version`](./.node-version)
 - npm included with Node.js
 - Prettier Extension
 
-If you have nvm then you can: `nvm install 24` or `nvm use 24`
+CI reads `.node-version` to use the same Node.js version as local development.
+Version managers that support this file can read it directly. With nvm, run
+`nvm install "$(cat .node-version)"` and `nvm use "$(cat .node-version)"`.
 
 ## Setup
 

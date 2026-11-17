@@ -17,7 +17,7 @@ Version managers that support this file can read it directly. With nvm, run
 Clone the Repository, open its directory, and install dependencies
 
 ```bash
-npm ci
+npm install
 ```
 
 This install the exact dependency versions recorded in `package-lock.json`

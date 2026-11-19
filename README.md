@@ -7,36 +7,19 @@ Memo-Rex is an AI-Powered Github Action to generate and update project documenta
 - Node.js version specified in [`.node-version`](./.node-version)
 - npm included with Node.js
 - Prettier Extension
+- uv
 
 CI reads `.node-version` to use the same Node.js version as local development.
-Version managers that support this file can read it directly. With nvm, run
-`nvm install "$(cat .node-version)"` and `nvm use "$(cat .node-version)"`.
+Version managers that support this file can read it directly through `.nvmrc`. With nvm, run
+`nvm install` and `nvm use`.
 
 ## Setup
 
 Clone the Repository, open its directory, and install dependencies
 
 ```bash
-npm install
+make install
 ```
-
-This install the exact dependency versions recorded in `package-lock.json`
-
-## Commands
-
-| Command                | Purpose                                      |
-| ---------------------- | -------------------------------------------- |
-| `npm run dev`          | Clean, compile, and run the application once |
-| `npm run clean`        | Delete generated build output                |
-| `npm run build`        | Clean and compile TypeScript into JavaScript |
-| `npm start`            | Run the previously compiled application      |
-| `npm run lint`         | Check code for lint errors                   |
-| `npm run lint:fix`     | Automatically fix supported lint issues      |
-| `npm run format`       | Format supported project files               |
-| `npm run format:check` | Check formatting without changing files      |
-| `npm test`             | Run tests once                               |
-| `npm run test:watch`   | Rerun tests as files change                  |
-| `npm run check`        | Check formatting, lint, test, and build      |
 
 ## Tools & Versions
 

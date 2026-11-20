@@ -3,12 +3,15 @@ NODE_BIN := ./node_modules/.bin
 .PHONY: install build clean check
 
 install:
+ifeq ($(CI),true)
 	npm ci
+else
+	npm install
+endif
 	$(MAKE) -C ai-service install
 	
 build:
 	npm run build
-	$(NODE_BIN)/tsc
 	$(MAKE) -C ai-service build
 
 clean:

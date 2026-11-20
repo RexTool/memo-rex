@@ -1,15 +1,17 @@
 {
   "name": "memrex",
   "version": "1.0.0",
+  "type": "module",
   "description": "Github App Documentation for Code",
   "keywords": [
-    "app"
+    "app",
+    "github"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^3.0.1",
-    "@actions/github": "^8.0.1",
+    "@actions/github": "^9.1.1",
     "fastify": "^5.12.8"
   },
   "devDependencies": {

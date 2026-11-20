@@ -2,13 +2,17 @@
   "name": "memrex",
   "version": "1.0.0",
   "type": "module",
-  "description": "Github App Documentation for Code",
+  "description": "Github Action Documentation for Code",
   "keywords": [
     "app",
     "github"
   ],
-  "author": "",
+  "author": "Preet Patel",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "dependencies": {
     "@actions/core": "^3.0.1",
     "@actions/github": "^9.1.1",

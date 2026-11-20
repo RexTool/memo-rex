@@ -7,16 +7,15 @@ install:
 	$(MAKE) -C ai-service install
 	
 build:
-	rm -rf dist
+	npm run build
 	$(NODE_BIN)/tsc
 	$(MAKE) -C ai-service build
 
 clean:
-	rm -rf dist
+	npm run clean
 	$(MAKE) -C ai-service clean
 
-check: build
-	$(NODE_BIN)/prettier --check .
-	$(NODE_BIN)/eslint .
-	$(NODE_BIN)/vitest run
-	$(MAKE) -C ai-service analyze test
+check:
+	npm run check
+	cd ai-service && uv run ruff check .
+	$(MAKE) -C ai-service test

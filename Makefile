@@ -1,5 +1,3 @@
-NODE_BIN := ./node_modules/.bin
-
 .PHONY: install build clean check
 
 install:

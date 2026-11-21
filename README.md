@@ -2,41 +2,15 @@
 
 Memo-Rex is an AI-Powered Github Action to generate and update project documentation from PR changes.
 
-## Requirements:
-
-- Node.js version specified in [`.node-version`](./.node-version)
-- npm included with Node.js
-- Prettier Extension
-
-CI reads `.node-version` to use the same Node.js version as local development.
-Version managers that support this file can read it directly. With nvm, run
-`nvm install "$(cat .node-version)"` and `nvm use "$(cat .node-version)"`.
-
 ## Setup
 
-Clone the Repository, open its directory, and install dependencies
+> Full project. Install Make, uv, and the Node.js version specified in .nvmrc. From the repository root.
 
 ```bash
-npm install
+make install    # Install dependencies for both projects
+make check      # Run the project's checks
+make build      # Compile TypeScript and package the Python service
 ```
-
-This install the exact dependency versions recorded in `package-lock.json`
-
-## Commands
-
-| Command                | Purpose                                      |
-| ---------------------- | -------------------------------------------- |
-| `npm run dev`          | Clean, compile, and run the application once |
-| `npm run clean`        | Delete generated build output                |
-| `npm run build`        | Clean and compile TypeScript into JavaScript |
-| `npm start`            | Run the previously compiled application      |
-| `npm run lint`         | Check code for lint errors                   |
-| `npm run lint:fix`     | Automatically fix supported lint issues      |
-| `npm run format`       | Format supported project files               |
-| `npm run format:check` | Check formatting without changing files      |
-| `npm test`             | Run tests once                               |
-| `npm run test:watch`   | Rerun tests as files change                  |
-| `npm run check`        | Check formatting, lint, test, and build      |
 
 ## Tools & Versions
 
@@ -53,7 +27,6 @@ This install the exact dependency versions recorded in `package-lock.json`
 | Vitest            | 5.1.0   | Automated tests                   |
 
 The compiler targets ES2022 and uses NodeNext module resolution.
-CI uses `actions/checkout@v4` and `actions/setup-node@v4`.
 
 ## License
 

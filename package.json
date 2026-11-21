@@ -1,36 +1,39 @@
 {
   "name": "memrex",
   "version": "1.0.0",
-  "description": "Github Actions Documentation for Code",
-  "scripts": {
-    "clean": "node scripts/clean.mjs",
-    "build": "npm run clean && tsc",
-    "start": "node dist/index.js",
-    "dev": "npm run build && npm start",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "check": "npm run format:check && npm run lint && npm run test && npm run build"
-  },
+  "main": "./dist/main.js",
+  "type": "module",
+  "description": "Github Action Documentation for Code",
   "keywords": [
-    "actions"
+    "app",
+    "github"
   ],
-  "author": "",
+  "author": "Preet Patel",
   "license": "MIT",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "node .",
+    "build": "npm run clean && tsc",
+    "clean": "node scripts/clean.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests",
+    "format:check": "prettier --check src tests",
+    "check": "npm run format:check && npm run lint && npm test && npm run build",
+    "test": "vitest run"
+  },
   "dependencies": {
-    "@actions/core": "^3.0.1"
+    "@actions/core": "^3.0.1",
+    "@actions/github": "^9.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@types/node": "^24.0.0",
+    "@types/node": "^24.19.2",
     "eslint": "^10.14.0",
     "globals": "^17.14.0",
     "prettier": "^3.10.1",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.2",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.1"
   }
 }
